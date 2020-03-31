@@ -7,3 +7,6 @@ un candidato. Se presentaron 5 candidatos para la eleccion.
 El programa debe mostrar la tabla con los nombres de las sedes;
 y los nombres de los candidatos y cada uno de los resultados.
 La aplicación también debe mostrar el candidato ganador.
+*/
+
+include Swing*
