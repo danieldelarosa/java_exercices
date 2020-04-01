@@ -10,3 +10,30 @@ La aplicación también debe mostrar el candidato ganador.
 */
 
 correcion agregada
+
+import javax.swing.*;
+
+public class ArrayElecciones {
+	
+	
+  public static void main(String args[]) {      
+      
+       //variables inicializadas 
+	   
+        int SedeFila=6;
+        int CandiColum=5;
+        
+      //Arreglos
+		//array inicializado con 5 candidatos
+        String Candidatos[]=new String[CandiColum];
+		
+        //array inicializado con 6 sedes
+        String Sedes[] = {"Aguazul","Paz de Ariporo","Tauramena","Trinidad","Villanueva","Yopal"};
+		
+		//array que almacenara los votos 
+	   int Votos[][];
+  
+    }    
+  
+  
+}
