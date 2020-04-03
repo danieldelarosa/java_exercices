@@ -8,30 +8,36 @@ El programa debe mostrar la tabla con los nombres de las sedes;
 y los nombres de los candidatos y cada uno de los resultados.
 La aplicación también debe mostrar el candidato ganador.
 */
+/* codigo ingresado*/
 
 correcion agregada
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class ArrayElecciones {
 	
 	
   public static void main(String args[]) {      
-      
-       //variables inicializadas 
-	   
-        int SedeFila=6;
-        int CandiColum=5;
-        
-      //Arreglos
-		//array inicializado con 5 candidatos
-        String Candidatos[]=new String[CandiColum];
+//ivan mauricio leal alvarez----------------
+Scanner teclado = new Scanner(System.in);//---creando objeto para pedir datos por teclado
+// variables inicializadas         
+      // Arreglos
+		// matriz inicializado con 5 candidatos
+        String  Candidatos [] =  { " Juan" , " Pedro" ,"jesus","manuel","pepito" };
 		
-        //array inicializado con 6 sedes
-        String Sedes[] = {"Aguazul","Paz de Ariporo","Tauramena","Trinidad","Villanueva","Yopal"};
+        // matriz inicializado con 6 sedes
+        String  SedeFila [] = { " Aguazul ", "trinidad","paz deariporo","pore","tauramena" };
 		
-		//array que almacenara los votos 
-	   int Votos[][];
+		// matriz que almacena los votos
+           int f,c;
+           int[][] Votos; 
+           int []vecres;
+           int numerom=0;
+           String casilla = null;
+           
+	   Votos = new int [5][6];
+           vecres= new int [5];
   //------------John Fredy Bonilla-----------------------
 	  
 	  // ingreso de votos
