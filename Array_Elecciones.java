@@ -9,6 +9,7 @@ y los nombres de los candidatos y cada uno de los resultados.
 La aplicación también debe mostrar el candidato ganador.
 */
 
+
 correcion agregada
 
 import javax.swing.*;
