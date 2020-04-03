@@ -22,8 +22,11 @@ public class ArrayElecciones {
 	   
         int SedeFila=6;
         int CandiColum=5;
-        
-      //Arreglos
+        int f;
+        int c;
+        String[] vecres = null;
+
+        //Arreglos
 		//array inicializado con 5 candidatos
         String Candidatos[]=new String[CandiColum];
 		
