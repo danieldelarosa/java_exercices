@@ -9,6 +9,7 @@ y los nombres de los candidatos y cada uno de los resultados.
 La aplicación también debe mostrar el candidato ganador.
 */
 
+
 correcion agregada
 
 import javax.swing.*;
@@ -22,8 +23,11 @@ public class ArrayElecciones {
 	   
         int SedeFila=6;
         int CandiColum=5;
-        
-      //Arreglos
+        int f;
+        int c;
+        String[] vecres = null;
+
+        //Arreglos
 		//array inicializado con 5 candidatos
         String Candidatos[]=new String[CandiColum];
 		
