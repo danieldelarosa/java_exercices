@@ -32,7 +32,31 @@ public class ArrayElecciones {
 		
 		//array que almacenara los votos 
 	   int Votos[][];
-  
+  //------------John Fredy Bonilla-----------------------
+	  
+	  // ingreso de votos
+       for(f=0  ; f< SedeFila.length ; f++)
+       {    
+           for(c=0 ; c< Candidatos.length;c++)
+           {
+              System.out.println("Porfavor ingrese la cantidad de votos que saco en el municipio ("+SedeFila[f]+") el candidato ("+Candidatos[c]+") ");
+              // Votos[SedeFila][CandiColum]=teclado.nextInt();//
+              Votos[f][c]= teclado.nextInt();
+           }
+       }
+       //operacion suma por columnas
+         for(f=0 ; f< SedeFila.length ; f++)
+           { 
+           int sumaC=0;
+           for(c=0  ; c< Candidatos.length;c++)
+           {
+            sumaC=Votos[c][f]+sumaC;  
+            vecres[f]=sumaC;
+             
+           } 
+           System.out.println("candidato "+Candidatos[f]+" resultado  es: " + vecres[f]);
+             
+       }      
     }    
   
   
