@@ -62,8 +62,31 @@ Scanner teclado = new Scanner(System.in);//---creando objeto para pedir datos po
            } 
            System.out.println("candidato "+Candidatos[f]+" resultado  es: " + vecres[f]);
              
-       }      
-    }    
-  
+       } 
+       
+     //contibucion carlos cogua
+            // comparacion de puntuacion mayor     
+            for(f=0 ; f< SedeFila.length ; f++)
+            { 
+                if(vecres[f]>vecres[f])
+        { 
+                      numerom = vecres[0];
+                      casilla = Candidatos[f];
+          
+        }
+          else
+          {
+          if(vecres[f]>numerom)
+              {
+          numerom =vecres[f];
+                casilla = Candidatos[f];
+            }
+                
+          }
+          }
+        System.out.println("Con una votacion de  "+ numerom+ " el candidadto ganador para director de sede yopal  es ; " +casilla);
+
+    }   
+    
   
 }
