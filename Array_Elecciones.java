@@ -88,7 +88,8 @@ Scanner teclado = new Scanner(System.in);//---creando objeto para pedir datos po
 
     }   
     
-  ✰ ✰ ✰ ✰ ZARYS VARGAS ✰ ✰  ✰ ✰
+	
+✰✰✰✰✰--ZARYS VARGAS--✰✰✰✰✰✰
 
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
