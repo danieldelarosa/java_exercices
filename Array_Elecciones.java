@@ -172,3 +172,77 @@ public class Votaciones {
     }//fin del main
 
 }//fin de la clase principal
+
+// Aporte darwin castañeda, posible solucion del ejercicio.
+
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class votaciones {
+	
+		public static void main (String a[]){
+		String candidatos[], sedes[];
+		int votos[][], fila, colum;
+
+		JTextArea area= new JTextArea(15, 30);;
+		JScrollPane scroll = new JScrollPane(area);
+		 fila = Integer.parseInt(JOptionPane.showInputDialog
+		 ("Por favor ingrese el número de sedes:"));
+		 
+		 
+		sedes = new String[fila];
+		for (int x = 0; x < fila; x++){
+		sedes[x] = JOptionPane.showInputDialog("Por favor ingres el nombre de la Sede No :"+(x+1));
+		 
+		}
+
+		colum = Integer.parseInt(JOptionPane.showInputDialog ("Por favor ingrese el número de candidatos:"));
+		candidatos = new String[colum];
+		for (int x = 0; x < colum; x++){
+		candidatos[x] = JOptionPane.showInputDialog("por favor ingrese el nombre del Candidato No :"+(x+1) );
+		
+		}
+		
+		votos = new int[fila][colum];
+		for (int x = 0; x < fila; x++){
+		 for (int y = 0; y < colum; y++){
+		votos[x][y] = Integer.parseInt(JOptionPane.
+		 showInputDialog("**Ingrese los votos de la sede** " +  sedes [x] + " para el candidato " + candidatos [y] ));
+		 } 
+		 
+		}
+
+		
+		int[] totalv = new int[candidatos.length];
+		for (int y = 0; y < colum; y++){
+		for (int i = 0; i < fila; i++){
+		totalv[y] += votos[i][y];
+		 }
+		
+		}
+
+		int max = 0;
+		int pos = 0;
+		for (int i = 0; i < totalv.length; i++){
+		if ( max < totalv[i] ){
+		max = totalv[i];
+		pos = i;
+		 }
+		}
+
+		 area.append("Candidato que obtubo la mayoría de votos es: " + candidatos [pos] +" °°Total de Votos obtenidos:°° " + totalv [pos]);
+
+
+		for (int i = 0; i < fila; i++){
+		area.append("\n"+sedes[i]);
+		for (int x = 0; x < colum; x++){
+		area.append("\n"+candidatos[x]);
+		area.append("\t"+votos[i][x]);
+		
+		 }
+		}
+		JOptionPane.showMessageDialog(null, scroll);
+		
+		 }
+		}
