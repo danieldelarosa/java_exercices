@@ -4,64 +4,94 @@ elecciones del rector de la Uniremigton Sede Yopal.
 Los datos deben almacenarse en una matriz donde
 cada fila corresponde a una sede y cada columna corresponde a
 un candidato. Se presentaron 5 candidatos para la eleccion.
-El programa debe mostrar la tabla con los nombres de las sedes;
+El programa debe mostrar la tabla con los nombres de las sedes de Colombia;
 y los nombres de los candidatos y cada uno de los resultados.
 La aplicación también debe mostrar el candidato ganador.
 */
+/* codigo ingresado*/
 
 
 correcion agregada
+
 
 import javax.swing.*;
 
 public class ArrayElecciones {
 	
 	
-  public static void main(String args[]) {      
-      
-       //variables inicializadas 
-	   
-        int SedeFila=6;
-        int CandiColum=5;
-        int f;
-        int c;
-        String[] vecres = null;
-
-        //Arreglos
-		//array inicializado con 5 candidatos
-        String Candidatos[]=new String[CandiColum];
+  public static void main(String args[]) {    
+    
+    //ivan mauricio leal alvarez----------------
+    // variables inicializadas         
+    // Arreglos
+    // matriz inicializado con 5 candidatos
+        String  Candidatos [] =  { " Juan" , " Pedro" ,"jesus","manuel","pepito" }; //AQUI YA ESTAN INICIALIZADO EL ARREGLO DE CANDIDATOS
 		
-        //array inicializado con 6 sedes
-        String Sedes[] = {"Aguazul","Paz de Ariporo","Tauramena","Trinidad","Villanueva","Yopal"};
+    // matriz inicializado con 29 sedes
+        String  SedeFila [] = { " APARTADO ", " ARMENIA "," BOGOTÀ "," BUCARAMANGA "," BUGA "," CALI "," CARTAGO "," CAUCASIA "," CUCUTA ",
+                               " DUITAMA "," IBAGUE "," IPIALES "," MANIZALES "," MEDELLIN ", " MONTERIA "," PALMIRA "," PASTO "," PEREIRA ",
+                               " POPAYAN "," QUIBDO "," RIONEGRO "," SAHAGUN "," SINCELEJO "," SOGAMOSO "," TULUA "," TUMACO "," TUNJA "," VILLAVICENCO "," YOPAL "};
 		
-		//array que almacenara los votos 
-	   int Votos[][];
-  //------------John Fredy Bonilla-----------------------
+    // matriz que almacena los votos
+        int[][] Votos; //AQUI YA ESTA DECLARA LA MATRIZ QUE HABIAN INICIALIZADO ABAJO 
+        int []veces;
+	      int numerom=0;
+        String casilla = null;
+           
+				//Votos = new int [5][6]; //NO ES NECESARIO INICIALIZAR LA MATRIZ
+    	
+        
+    //------------John Fredy Bonilla-----------------------
 	  
-	  // ingreso de votos
-       for(f=0  ; f< SedeFila.length ; f++)
-       {    
-           for(c=0 ; c< Candidatos.length;c++)
-           {
-              System.out.println("Porfavor ingrese la cantidad de votos que saco en el municipio ("+SedeFila[f]+") el candidato ("+Candidatos[c]+") ");
-              // Votos[SedeFila][CandiColum]=teclado.nextInt();//
-              Votos[f][c]= teclado.nextInt();
+    // ingreso de votos
+       for(int f=0  ; f< SedeFila.length ; f++){    
+           for(int c=0 ; c< Candidatos.length;c++){
+                Votos[f][c] = Integer.parseInt(JOptionPane.showInputDialog("Porfavor ingrese la cantidad de votos que saco en la sede "
+                                                                           +SedeFila[f]+ " el candidato " +Candidatos[c]));
            }
        }
-       //operacion suma por columnas
-         for(f=0 ; f< SedeFila.length ; f++)
-           { 
-           int sumaC=0;
-           for(c=0  ; c< Candidatos.length;c++)
-           {
-            sumaC=Votos[c][f]+sumaC;  
-            vecres[f]=sumaC;
-             
-           } 
-           System.out.println("candidato "+Candidatos[f]+" resultado  es: " + vecres[f]);
-             
-       }      
-    }    
-  
-  
+    		
+    //operacion suma por columnas
+        for(int f=0 ; f< SedeFila.length ; f++){ 
+           for(int c=0; c< Candidatos.length;c++){
+                veces[f]+=Votos[c][f]; 
+           }             
+       } 
+    
+       
+    //contibucion carlos cogua
+    // comparacion de puntuacion mayor     
+        for(int f=0 ; f< SedeFila.length ; f++){ 
+            if(veces[f]>veces[f]){ 
+                numerom = veces[0];
+                casilla = Candidatos[f];  
+            }else{
+                if(vecres[f]>numerom){
+                    numerom =vecres[f];
+                    casilla = Candidatos[f];
+                }
+            }
+        }
+
+        JTextArea area = new JTextArea(15, 30); 
+        JScrollPane scroll = new JScrollPane(area); 
+
+// Aporte darwin castañeda, posible solucion del ejercicio.
+
+	 area.append("Candidato que obtubo la mayoría de votos es: " + casilla +" °°Total de Votos obtenidos:°° " + numerom);
+
+		for (int i = 0; i < SedeFila.length; i++){
+                    area.append("\n"+SedeFila[i]);
+                        for (int x = 0; x < Candidatos.length; x++){
+                            area.append("\n"+Candidatos[x]);
+                            area.append("\t"+Votos[i][x]);
+                        }
+		}
+                    JOptionPane.showMessageDialog(null, scroll);
+    }                  
 }
+  
+  
+  
+  
+  
