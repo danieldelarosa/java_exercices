@@ -10,34 +10,30 @@ La aplicación también debe mostrar el candidato ganador.
 */
 /* codigo ingresado*/
 
-correcion agregada
-
 import javax.swing.*;
-import java.util.Scanner;
 
 public class ArrayElecciones {
-	
-	
-  public static void main(String args[]) {      
-//ivan mauricio leal alvarez----------------
-Scanner teclado = new Scanner(System.in);//---creando objeto para pedir datos por teclado
-// variables inicializadas         
+	public static void main(String args[]) {      
+//ivan mauricio leal alvarez----------------         
       // Arreglos
-		// matriz inicializado con 5 candidatos
-        String  Candidatos [] =  { " Juan" , " Pedro" ,"jesus","manuel","pepito" };
+     // matriz inicializado con 5 candidatos
+        String  Candidatos [] =  { " Juan" , " Pedro" ,"Jesus","Manuel","Ismael" };
 		
-        // matriz inicializado con 6 sedes
-        String  SedeFila [] = { " Aguazul ", "trinidad","paz deariporo","pore","tauramena" };
+     // matriz inicializado con 29 sedes
+        String  SedeFila [] = { " APARTADO ", " ARMENIA "," BOGOTÀ "," BUCARAMANGA "," BUGA "," CALI "," CARTAGO "," CAUCASIA "," CUCUTA ",
+                               " DUITAMA "," IBAGUE "," IPIALES "," MANIZALES "," MEDELLIN ", " MONTERIA "," PALMIRA "," PASTO "," PEREIRA ",
+                               " POPAYAN "," QUIBDO "," RIONEGRO "," SAHAGUN "," SINCELEJO "," SOGAMOSO "," TULUA "," TUMACO "," TUNJA "," VILLAVICENCO "," YOPAL "};
 		
-		// matriz que almacena los votos
-           int f,c;
-           int[][] Votos; 
-           int []vecres;
+	// matriz que almacena los votos
+           int Votos [][]; 
+           int veces [];
+		
+	// variables inicializadas
            int numerom=0;
-           String casilla = null;
-           
-	   Votos = new int [5][6];
-           vecres= new int [5];
+       	   String casilla = null;
+           int SedeFil=29;
+           int CandiColum=5;
+		
   //------------John Fredy Bonilla-----------------------
 	  
 	  // ingreso de votos
@@ -85,164 +81,23 @@ Scanner teclado = new Scanner(System.in);//---creando objeto para pedir datos po
           }
           }
         System.out.println("Con una votacion de  "+ numerom+ " el candidadto ganador para director de sede yopal  es ; " +casilla);
-
-    }   
     
-	
-?????--ZARYS VARGAS--??????
+//ZARYS VARGAS
 
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
-/**
- *
- * @author PORTATIL
- */
-public class Votaciones {
-
-    
-    public static void main(String[] args) {
-        
-
-     
-        String candidatos[], sedes[];
-        int votos[][];
-
-        
-        int fil, col;
-
-        JTextArea area = new JTextArea(15, 30); 
+	JTextArea area = new JTextArea(15, 30); 
         JScrollPane scroll = new JScrollPane(area); 
-        
-        fil = Integer.parseInt(JOptionPane.showInputDialog("ingrese el numero de las sedes"));
-        sedes = new String[fil]; 
-
-        for (int x = 0; x < fil; x++) { 
-            sedes[x] = JOptionPane.showInputDialog("nombre para la sede N:" + (x + 1));
-        }
-
-        
-        col = Integer.parseInt(JOptionPane.showInputDialog("Ingrese e numero de candidatos"));
-        candidatos = new String[col];
-        for (int x = 0; x < col; x++) { 
-            candidatos[x] = JOptionPane.showInputDialog("nombre del candidato n:" + (x + 1));
-        }
-
-        votos = new int[fil][col]; 
-
-        for (int x = 0; x < fil; x++) {
-            for (int y = 0; y < col; y++) { 
-                votos[x][y] = Integer.parseInt(JOptionPane.showInputDialog("ingrese los votos de la sede " + sedes[x] + " paea el candidato " + candidatos[y]));
-
-            }
-        }
-       
-        int[] totalVotos = new int[candidatos.length];
-        for (int y = 0; y < col; y++) {
-            for (int x = 0; x < fil; x++) {
-                totalVotos[y] += votos[x][y];
-            }
-        }
-
-        
-        int max = 0;
-        int pos = 0;
-        for (int i = 0; i < totalVotos.length; i++) {
-            if (max < totalVotos[i]) {
-                max = totalVotos[i];
-                pos = i;
-            }
-        }
-        
-
-        area.append("candidato con mayoria de votos:" + candidatos[pos] + "Total de votos" + totalVotos[pos]);
-        
-        for (int i = 0; i < fil; i++) {
-            area.append("\n" + sedes[i]);
-            for (int x = 0; x < col; x++) {
-                area.append("\n" + candidatos[x]);
-                area.append("\t" + votos[i][x]);
-            }
-        }
-
-        
-        JOptionPane.showMessageDialog(null, scroll);
-
-    }//fin del main
-
-}//fin de la clase principal
 
 // Aporte darwin castañeda, posible solucion del ejercicio.
 
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
-public class votaciones {
-	
-		public static void main (String a[]){
-		String candidatos[], sedes[];
-		int votos[][], fila, colum;
-
-		JTextArea area= new JTextArea(15, 30);;
-		JScrollPane scroll = new JScrollPane(area);
-		 fila = Integer.parseInt(JOptionPane.showInputDialog
-		 ("Por favor ingrese el número de sedes:"));
-		 
-		 
-		sedes = new String[fila];
-		for (int x = 0; x < fila; x++){
-		sedes[x] = JOptionPane.showInputDialog("Por favor ingres el nombre de la Sede No :"+(x+1));
-		 
-		}
-
-		colum = Integer.parseInt(JOptionPane.showInputDialog ("Por favor ingrese el número de candidatos:"));
-		candidatos = new String[colum];
-		for (int x = 0; x < colum; x++){
-		candidatos[x] = JOptionPane.showInputDialog("por favor ingrese el nombre del Candidato No :"+(x+1) );
-		
-		}
-		
-		votos = new int[fila][colum];
-		for (int x = 0; x < fila; x++){
-		 for (int y = 0; y < colum; y++){
-		votos[x][y] = Integer.parseInt(JOptionPane.
-		 showInputDialog("**Ingrese los votos de la sede** " +  sedes [x] + " para el candidato " + candidatos [y] ));
-		 } 
-		 
-		}
-
-		
-		int[] totalv = new int[candidatos.length];
-		for (int y = 0; y < colum; y++){
-		for (int i = 0; i < fila; i++){
-		totalv[y] += votos[i][y];
-		 }
-		
-		}
-
-		int max = 0;
-		int pos = 0;
-		for (int i = 0; i < totalv.length; i++){
-		if ( max < totalv[i] ){
-		max = totalv[i];
-		pos = i;
-		 }
-		}
-
-		 area.append("Candidato que obtubo la mayoría de votos es: " + candidatos [pos] +" °°Total de Votos obtenidos:°° " + totalv [pos]);
-
-
-		for (int i = 0; i < fila; i++){
-		area.append("\n"+sedes[i]);
-		for (int x = 0; x < colum; x++){
-		area.append("\n"+candidatos[x]);
-		area.append("\t"+votos[i][x]);
-		
-		 }
+		for (int i = 0; i < SedeFila; i++){
+			area.append("\n"+SedeFila[i]);
+		for (int x = 0; x < Candidatos.length; x++){
+			area.append("\n"+Candidatos[x]);
+			area.append("\t"+Votos[i][x]);
+			}
 		}
 		JOptionPane.showMessageDialog(null, scroll);
 		
-		 }
-		}
+	}
+}
