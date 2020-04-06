@@ -34,7 +34,9 @@ public class ArrayElecciones {
            int SedeFil=29;
            int CandiColum=5;
 		
-     //------------Gabriel Orjuela-----------------------
+     ///------------John Fredy Bonilla-----Editado por Gabriel Orjuela------------------
+	  
+        
 	  
      // ingreso de votos
       	Votos = new int[SedeFil][CandiColum];
@@ -53,6 +55,7 @@ public class ArrayElecciones {
             }
         }
     
+
  
      //contibucion carlos cogua
             // comparacion de puntuacion mayor     
