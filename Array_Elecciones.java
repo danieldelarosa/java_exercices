@@ -61,7 +61,7 @@ public class ArrayElecciones {
 	int comparacion = 0;
 	int cas = 0;
             for(int i=0 ; i< veces.length ; i++){ 
-                if(comparacion < vecres[i]){ 
+                if(comparacion < veces[i]){ 
                       comparacion = veces[i];
                       cas = i;         
                   }
@@ -84,7 +84,7 @@ public class ArrayElecciones {
            		 area.append(Candidatos[x]+"                 ");
         	}
 		
-	for (int i = 0; i < SedeFila; i++){
+	for (int i = 0; i < SedeFila.length; i++){
 		area.append("\n"+SedeFila[i]+"                   ");
 			for (int x = 0; x < Candidatos.length; x++){
 				area.append("\t"+Votos[i][x]);
