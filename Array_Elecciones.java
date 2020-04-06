@@ -29,8 +29,6 @@ public class ArrayElecciones {
            int veces [];
 		
 	// variables inicializadas
-           int numerom=0;
-       	   String casilla = null;
            int SedeFil=29;
            int CandiColum=5;
 		
@@ -58,27 +56,17 @@ public class ArrayElecciones {
 
  
      //contibucion carlos cogua
-            // comparacion de puntuacion mayor     
-            for(f=0 ; f< SedeFila.length ; f++)
-            { 
-                if(vecres[f]>vecres[f])
-        { 
-                      numerom = vecres[0];
-                      casilla = Candidatos[f];
-          
-        }
-          else
-          {
-          if(vecres[f]>numerom)
-              {
-          numerom =vecres[f];
-                casilla = Candidatos[f];
-            }
-                
+     // comparacion de puntuacion mayor
+		
+	int comparacion = 0;
+	int cas = 0;
+            for(int i=0 ; i< veces.length ; i++){ 
+                if(comparacion < vecres[i]){ 
+                      comparacion = veces[i];
+                      cas = i;         
+                  }
           }
-          }
-        System.out.println("Con una votacion de  "+ numerom+ " el candidadto ganador para director de sede yopal  es ; " +casilla);
-    
+       
 //ZARYS VARGAS
 
 	JTextArea area = new JTextArea(15, 30); 
@@ -86,12 +74,13 @@ public class ArrayElecciones {
 
 // Aporte darwin castañeda, posible solucion del ejercicio.
 
-
-		for (int i = 0; i < SedeFila; i++){
-			area.append("\n"+SedeFila[i]);
-		for (int x = 0; x < Candidatos.length; x++){
-			area.append("\n"+Candidatos[x]);
-			area.append("\t"+Votos[i][x]);
+	area.append("El candidato que obtuvo la mayoria de votos es: "+ Candidatos[cas] +
+		    " -- Total de Votos obtenidos: "+veces[cas] );
+	for (int i = 0; i < SedeFila; i++){
+		area.append("\n"+SedeFila[i]);
+			for (int x = 0; x < Candidatos.length; x++){
+				area.append("\n"+Candidatos[x]);
+				area.append("\t"+Votos[i][x]);
 			}
 		}
 		JOptionPane.showMessageDialog(null, scroll);
