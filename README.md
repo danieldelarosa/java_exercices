@@ -22,7 +22,8 @@ Carlos Cogua,
 Zarys Vargas,
 Darwin Castañeda,
 Gabriel Orjuela Totena,
-Karen Dayana Tinjaca Nossa
+Karen Dayana Tinjaca Nossa,
+Johan Antonio Camacho Cruz
 
 
 **Para utilizar este código puede clonar o descargar este repositorio y abrir el documento ArrayElecciones con el editor de su preferencia. **
