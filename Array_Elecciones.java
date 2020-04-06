@@ -75,7 +75,7 @@ public class ArrayElecciones {
 // Aporte darwin castañeda, posible solucion del ejercicio.
 
 	area.append("El candidato que obtuvo la mayoria de votos es: "+ Candidatos[cas] +
-		    " -- Total de Votos obtenidos: "+veces[cas] );
+		    " -- Total de Votos obtenidos: "+veces[cas] +"\n"+"\n");
 		
 //imprimir en pantalla la informacion de los votos
 		
