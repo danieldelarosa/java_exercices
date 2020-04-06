@@ -34,32 +34,26 @@ public class ArrayElecciones {
            int SedeFil=29;
            int CandiColum=5;
 		
-  //------------John Fredy Bonilla-----------------------
+     //------------Gabriel Orjuela-----------------------
 	  
-	  // ingreso de votos
-       for(f=0  ; f< SedeFila.length ; f++)
-       {    
-           for(c=0 ; c< Candidatos.length;c++)
-           {
-              System.out.println("Porfavor ingrese la cantidad de votos que saco en el municipio ("+SedeFila[f]+") el candidato ("+Candidatos[c]+") ");
-              // Votos[SedeFila][CandiColum]=teclado.nextInt();//
-              Votos[f][c]= teclado.nextInt();
+     // ingreso de votos
+      	Votos = new int[SedeFil][CandiColum];
+       for(int f=0  ; f< SedeFila.length ; f++){    
+           for(int c=0 ; c< Candidatos.length;c++){
+                Votos[f][c] = Integer.parseInt(JOptionPane.showInputDialog("Porfavor ingrese la cantidad de votos que saco en la sede "
+                                                                           +SedeFila[f]+ " el candidato " +Candidatos[c]));
            }
        }
-       //operacion suma por columnas
-         for(f=0 ; f< SedeFila.length ; f++)
-           { 
-           int sumaC=0;
-           for(c=0  ; c< Candidatos.length;c++)
-           {
-            sumaC=Votos[c][f]+sumaC;  
-            vecres[f]=sumaC;
-             
-           } 
-           System.out.println("candidato "+Candidatos[f]+" resultado  es: " + vecres[f]);
-             
-       } 
-       
+    		
+    //operacion suma por columnas
+        veces = new int[Candidatos.length];
+        for (int y=0; y<CandiColum; y++){
+            for (int x=0;x<SedeFil;x++){
+                veces[y] +=Votos[x][y];
+            }
+        }
+    
+ 
      //contibucion carlos cogua
             // comparacion de puntuacion mayor     
             for(f=0 ; f< SedeFila.length ; f++)
