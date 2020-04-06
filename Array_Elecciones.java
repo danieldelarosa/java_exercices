@@ -69,17 +69,24 @@ public class ArrayElecciones {
        
 //ZARYS VARGAS
 
-	JTextArea area = new JTextArea(15, 30); 
+	JTextArea area = new JTextArea(45, 60); 
         JScrollPane scroll = new JScrollPane(area); 
 
 // Aporte darwin castañeda, posible solucion del ejercicio.
 
 	area.append("El candidato que obtuvo la mayoria de votos es: "+ Candidatos[cas] +
 		    " -- Total de Votos obtenidos: "+veces[cas] );
+		
+//imprimir en pantalla la informacion de los votos
+		
+	area.append("                                                        ");
+		for (int x = 0; x < Candidatos.length; x++){
+           		 area.append(Candidatos[x]+"                 ");
+        	}
+		
 	for (int i = 0; i < SedeFila; i++){
-		area.append("\n"+SedeFila[i]);
+		area.append("\n"+SedeFila[i]+"                   ");
 			for (int x = 0; x < Candidatos.length; x++){
-				area.append("\n"+Candidatos[x]);
 				area.append("\t"+Votos[i][x]);
 			}
 		}
